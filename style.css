@@ -1,6 +1,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
      :root {
         --primary-color: #047aed;
+        --secondary-color: #1c3fa8;
+        --dark-color: #002240;
+        --dark-color: #f4f4f4;
     }
     
     * {
@@ -111,35 +114,56 @@
         padding: 3px;
         font-size: 16px;
     }
-    /* Utiliti */
     
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        overflow: auto;
-        padding: 0 40px;
+    .showcase-form input :focus {
+        outline: none;
     }
     
-    .card {
-        background-color: #fff;
-        color: #333;
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        margin: 10px;
+    .showcase::before,
+    .showcase::after {
+        content: '';
+        position: absolute;
+        height: 100px;
+        bottom: -70px;
+        right: 0;
+        left: 0;
+        background: white;
+        transform: skewY(-3deg);
+        -webkit-transform: skewY(-3deg);
+        -moz-transform: skewY(-3deg);
+        -ms-transform: skewY(-3deg);
+    }
+    /* stats */
+    
+    .stats {
+        padding-top: 100px;
     }
     
-    .flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
+    .stats-heading {
+        max-width: 500px;
     }
     
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
+    .stats .grid h3 {
+        font-size: 35px;
+    }
+    
+    .stats .grid p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /* cli */
+    
+    .cli .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .cli .grid>*:first-child {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+    }
+    /* Cloud */
+    
+    .cloud .grid {
+        grid-template-columns: 4fr 3fr;
     }
