@@ -1,20 +1,25 @@
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('nav-links');
-    const navlinks = document.querySelectorAll('nav-links li');
-    //Toggle nav
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
+const hamburger = document.queryselector('.header .nav-bar .nav-list .hamburger');
+const hamburger = document.queryselector('.header .nav-bar .nav-list .hamburger ul');
+const hamburger = document.queryselector('.header .container');
 
-        //Animate links
-        navlinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = 'navlinkfade 0.5s ease forwaeds ${index/7+0.3}s';
-            }
-        });
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mabile_menu.classList.toggle('active');
+});
+
+document.addEventListener('scroll', () => {
+    var scroll_position = window.scrolly;
+    if (scroll_position > 250) {
+        Headers.style.backgroundColor = '#29323';
+    } else {
+        Headers.style.backgroundColor = 'transparent';
+    }
+});
+
+menu_item.forEach((item) => {
+    item.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobile_menu.classlist.toggle('active')
     });
+});
 }
-
-navSlide();
